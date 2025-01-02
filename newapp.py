@@ -2,7 +2,7 @@ import pickle
 import streamlit as st
 
 # Load the model with a corrected file path
-model = pickle.load(open(r'C:\ExcelR\python\Titanic_model.pkl', "rb"))
+model = pickle.load(open(r'https://github.com/umeshpardeshi9545/titanic-survival-prediction-/blob/main/Titanic_model.pkl', "rb"))
 
 def main():
     st.title("Survived or not")
