@@ -1,8 +1,20 @@
 import pickle
 import streamlit as st
 
+import requests
+from io import BytesIO
+
+# URL of the model file
+url = 'https://github.com/umeshpardeshi9545/titanic-survival-prediction-/raw/main/Titanic_model.pkl'
+
+# Send a GET request to download the file
+response = requests.get(url)
+
+# Load the model from the response content
+model = pickle.load(BytesIO(response.content))
+
 # Load the model with a corrected file path
-model = pickle.load(open(r'https://github.com/umeshpardeshi9545/titanic-survival-prediction-/blob/main/Titanic_model.pkl', "rb"))
+#model = pickle.load(open(r'https://github.com/umeshpardeshi9545/titanic-survival-prediction-/blob/main/Titanic_model.pkl', "rb"))
 
 def main():
     st.title("Survived or not")
